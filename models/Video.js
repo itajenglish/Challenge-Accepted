@@ -26,6 +26,7 @@ const getVideosByUserId = (req, res, next) => {
 }
 
 const addNewVideo = (req, res, next) => {
+  console.log(req)
   // console.log(req)
   //  const uid = req.session.user.id;
   //  const title = '#MannequinChallenge';
