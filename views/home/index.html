@@ -13,6 +13,16 @@
 
   <script> ZiggeoApi.token = "7c1ac0d9b66838fd09875138b9d0d5c3"; </script>
   <script> ZiggeoApi.Events.on("submitted", function (data) {
+    $.ajax({
+      url: "/api/videos",
+      method: "POST",
+      data: { token: data.video.token }
+      success: function(res){
+         console.log(res);
+         $("#ziggeo-video-container").load('/api/load')
+      }
+    })
+
     alert("The video with token " + data.video.token + " has been submitted!");});
   </script>
   <script>
