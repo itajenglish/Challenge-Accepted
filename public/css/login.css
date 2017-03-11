@@ -17,25 +17,25 @@ body {
 
 .btn:hover {
   background-color: white;
-  color: #651fff;
+  color: #eb6a74;
 }
 
 .input-field input[type=text]:focus+label {
-  color: #651fff;
+  color: #eb6a74;
 }
 
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid #651fff;
-  box-shadow: 0 1px 0 0 #651fff;
+  border-bottom: 1px solid #eb6a74;
+  box-shadow: 0 1px 0 0 #eb6a74;
 }
 
 .input-field input[type=password]:focus+label {
-  color: #651fff;
+  color: #eb6a74;
 }
 
 .input-field input[type=password]:focus {
-  border-bottom: 1px solid #651fff;
-  box-shadow: 0 1px 0 0 #651fff;
+  border-bottom: 1px solid #eb6a74;
+  box-shadow: 0 1px 0 0 #eb6a74;
 }
 
 option:focus{
@@ -43,20 +43,20 @@ option:focus{
 }
 
 .input-field input[type=email]:focus+label {
-  color: #651fff;
+  color: #eb6a74;
 }
 
 .input-field input[type=email]:focus {
-  border-bottom: 1px solid #651fff;
-  box-shadow: 0 1px 0 0 #651fff;
+  border-bottom: 1px solid #eb6a74;
+  box-shadow: 0 1px 0 0 #eb6a74;
 }
 
 .textColor {
-  color: #651fff;
+  color: #eb6a74;
 }
 
 .btnColor {
-  background-color: #651fff;
+  background-color: #eb6a74;
 }
 
 .collection {
