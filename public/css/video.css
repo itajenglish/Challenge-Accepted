@@ -4,7 +4,7 @@
   margin: 50px auto;
 }
 
-#myRecorder{
+.border-div{
   top: 30%;
   border: #eb6a74 dashed 15px;
   position: fixed;

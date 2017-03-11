@@ -47,23 +47,35 @@
   </script>
 </head>
 
-<body>
-  <div class="row">
-
-    <div class="col m6 s12 ">
-      <ul class="collection with-header">
-        <li class="collection-header">
-          <center>
-            <h4>Top <span class = "textColor">Videos</span></h4>
-          </center>
-          <hr><hr>
-          <div id="ziggeo-video-container"></div>
-        </li>
-
+<header>
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="/" class="brand-logo">Challenge<span class = "textColor" id = "djLogo">Accepted</span></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href = "/logout" class="waves-effect waves-light btn btnColor">Logout</a></li>
       </ul>
     </div>
+  </nav>
+</header>
 
-    <div id="myRecorder" class="col m4 s12 offset-m7">
+<body>
+  <div class="row">
+    <div class="border-div">
+      <div class="col m6 s12 ">
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <center>
+              <h4>Top <span class = "textColor">Videos</span></h4>
+            </center>
+            <hr><hr>
+            <div id="ziggeo-video-container"></div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-div" class="col m4 s12 offset-m7">
       <h5 class="center-align"> Will you accept the Challenge? </h5>
       <center>
         <ziggeo
@@ -79,6 +91,6 @@
   </div>
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script src="scripts/videos.js"></script>
 </body>
 </html>
