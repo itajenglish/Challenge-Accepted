@@ -5,25 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <link rel="stylesheet" href="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
   <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
+
   <script> ZiggeoApi.token = "7c1ac0d9b66838fd09875138b9d0d5c3"; </script>
-  <script> ZiggeoApi.Config.cdn = true; </script>
-  <script> ZiggeoApi.Config.resumable = true; </script>
-  <script> ZiggeoApi.Config.webrtc = true; </script>
   <script> ZiggeoApi.Events.on("submitted", function (data) {
     alert("The video with token " + data.video.token + " has been submitted!");
     });
   </script>
   <script>
     ZiggeoApi.Videos.index({}, {
-        success: function (args, videos) {
-            for (var i = 0; i < videos.length; ++i)
-                $("ziggeo-video-container").append("<ziggeo ziggeo-video='" + videos[i].token + "'></ziggeo>");
-        }
+      success: function (args, videos) {
+        for (var i = 0; i < videos.length; ++i)
+          $("#ziggeo-video-container")
+            .append(
+              "<ziggeo class='video' width='300' ziggeo-video='" +
+                videos[i].token +
+              "'></ziggeo>");
+      }
     });
-</script>
+  </script>
 </head>
+
 <body>
   <h4> Will you accept the Challenge? </h4>
   <div id="ziggeo-video-container"></div>

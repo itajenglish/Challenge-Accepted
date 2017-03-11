@@ -3,12 +3,7 @@
   display: inline-block;
   position: relative;
   margin: 25px 50px 25px 0px;
-  height: 300px;
-  width: 200px;
-  overflow: hidden;
 }
-
-
 
 body {
   background-color:  white;
