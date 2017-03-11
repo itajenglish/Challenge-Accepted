@@ -1,6 +1,6 @@
 const db = require('../lib/db')
 
-const getAllVidoes = (req, res, next) => {
+const getAllVideos = (req, res, next) => {
   db.any('SELECT * FROM videos')
   .then((videos) => {
     res.send(videos)
@@ -26,6 +26,6 @@ const getVideosByUserId = (req, res, next) => {
 }
 
 module.exports = {
-  getAllVidoes,
+  getAllVideos,
   getVideosByUserId
 }
