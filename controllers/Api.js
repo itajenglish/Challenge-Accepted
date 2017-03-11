@@ -8,7 +8,10 @@ router.post('/users', register, (req, res, next) => {
   res.send('Success!');
 });
 
+router.get('/videos', getAllVideos, (req, res, next) => {})
+
 router.post('/videos', addNewVideo, (req, res, next) => {})
+
 
 
 module.exports = router;
