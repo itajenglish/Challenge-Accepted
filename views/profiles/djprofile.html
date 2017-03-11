@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{user.first_name}} {{user.last_name}}</title>
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/userprofile.css">
+</head>
+<header>
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="/" class="brand-logo">Que<span class = "textColor" id = "userLogo">DJ</span></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/logout"class="waves-effect waves-light btn btnColor">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="row">
+    <div class="col card m6 s12 ">
+      <div class="card-image">
+        <img id ="img" src="/{{user.image}}">
+      </div>
+      <span class="card-title">{{user.first_name}}</span> <span class="card-title textColor">{{user.last_name}}</span>
+      <div class="card-content">
+        <p>Bio - <span class="textColor">{{user.bio}}</span></p>
+        <p>Location - <span class="textColor">{{user.location}}</span></p>
+        <p>Up Votes - {{user.upvotes}} </p>
+        <p>Down Votes - {{user.downvotes}} </p>
+      </div>
+    </div>
+
+    <div class="col card m6 s12">
+      <div class="row">
+        <form action="/users/{{user.id}}?__method=PUT" method="POST" class="col s12">
+          <div class="row">
+
+            <div class="input-field col s6">
+              <input name="first_name" id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input name="last_name" id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="location" id="location" type="text" class="validate">
+              <label for="location">Location</label>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea name = "bio" id="textarea1" class="materialize-textarea" length="250"></textarea>
+                <label for="textarea1">Bio</label>
+              </div>
+            </div>
+
+          </div>
+          <button id="submitBtn" type="submit" class="waves-effect waves-light btn btnColor">Update</button>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="../scripts/jquery.js"></script>
+    <script type="text/javascript" src="../scripts/materialize.min.js"></script>
+</body>
+
+</html>

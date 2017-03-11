@@ -1,0 +1,32 @@
+{
+  "name": "Challenge-Accepted",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itajenglish/Challenge-Accepted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itajenglish/Challenge-Accepted/issues"
+  },
+  "homepage": "https://github.com/itajenglish/Challenge-Accepted#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "fetch": "^1.1.0",
+    "method-override": "^2.3.7",
+    "morgan": "^1.8.1",
+    "mustache-express": "^1.2.2",
+    "node-fetch": "^1.6.3",
+    "pg-promise": "^5.2.7"
+  }
+}
