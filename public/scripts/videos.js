@@ -1,19 +1,33 @@
-$(document).ready(function() {
-  // GET /videos for video tokens
-  //loop over videos making
-  function renderZiggeoVideos(token){
-    $("#ziggeo-video-container")
-      .append("<ziggeo class='video' width='550' ziggeo-video='" +
-                 token +
-               "'></ziggeo>");
-  }
+// $(document).ready(function() {
+//   // GET /videos for video tokens
+//   //loop over videos making
 
-  $.ajax({
-    url: '/videos',
-    method: "GET",
-    success: function(data){
-      data.forEach(token => renderZiggeoVideos(token))
-    }
-  })
+//   console.log("video doc ready");
 
-});
+//   function renderZiggeoVideos({token, hahstag}){
+//     $("#ziggeo-video-container")
+//       .append("<ziggeo class='video' width='550' ziggeo-video='" +
+//                  token +
+//                "'> # " + hashtag + "</ziggeo>");
+//   }
+
+//   function getZiggeoVideos(){
+//     $.ajax({
+//       url: '/api/videos',
+//       method: "GET",
+//       success: function(data){
+//          console.log("Videos API response");
+//          console.log(data);
+//         data.forEach(video => {
+//           token = video.token;
+//           hashtag = video.hashtag;
+//           videoData = { token, hashtag }
+//           renderZiggeoVideos(videoData)
+//         })
+//       }
+//     });
+//   };
+
+//   getZiggeoVideos();
+
+// });

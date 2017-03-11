@@ -3,3 +3,9 @@
   position: relative;
   margin: 50px auto;
 }
+
+#myRecorder{
+  top: 30%;
+  border: #eb6a74 dashed 15px;
+  position: fixed;
+}
