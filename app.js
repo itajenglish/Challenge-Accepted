@@ -42,7 +42,7 @@ const API_ROUTER = require('./controllers/Api');
 app.use(HOME_ROUTER);
 app.use(SESSIONS_ROUTER);
 app.use('/Users', USERS_ROUTER);
-app.use('/Video', VIDEO_ROUTER);
+app.use('/Videos', VIDEO_ROUTER);
 app.use('/Api', API_ROUTER);
 
 //start the server
