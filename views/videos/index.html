@@ -3,17 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="">
+  <title>Challenge Accepted Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
-  <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
 
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
+  <link rel="stylesheet" href="css/video.css" />
+
+  <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
   <script> ZiggeoApi.token = "7c1ac0d9b66838fd09875138b9d0d5c3"; </script>
-  <script> ZiggeoApi.Events.on("submitted", function (data) {
-    alert("The video with token " + data.video.token + " has been submitted!");
+  <script> ZiggeoApi.Config.webrtc = true; </script>
+
+
+  <script> ZiggeoApi.Events.on("submitted", function(data) {
+
+    alert("Congratz b, your video has been submitted with ZIGGEO!!!!");
+     $.ajax({
+      url: "/api/videos",
+      method: "POST",
+      data: { token: data.video.token },
+      success: function(res){
+         console.log(res);
+         $("body").load('/videos')
+      }
+    })
+
     });
   </script>
+
   <script>
     ZiggeoApi.Videos.index({}, {
       success: function (args, videos) {
@@ -22,22 +39,45 @@
             .append(
               "<ziggeo class='video' width='300' ziggeo-video='" +
                 videos[i].token +
-              "'></ziggeo>");
+              "'></ziggeo>"
+            );
       }
     });
   </script>
 </head>
 
 <body>
-  <h4> Will you accept the Challenge? </h4>
-  <div id="ziggeo-video-container"></div>
+  <div class="row">
 
-  <!-- Ziggeo recording blah -->
-  <ziggeorecorder ziggeo-timelimit=15
-    ziggeo-width=320
-    ziggeo-height=240
-    ziggeo-theme='modern'
-    id="myRecorder">
-  </ziggeorecorder>
+    <div class="col m6 s12 ">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <center>
+            <h4>Top <span class = "textColor">Videos</span></h4>
+          </center>
+          <hr><hr>
+          <div id="ziggeo-video-container"></div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="myRecorder" class="col m4 s12 offset-m7">
+      <h5 class="center-align"> Will you accept the Challenge? </h5>
+      <center>
+        <ziggeo
+          ziggeo-limit=15
+          ziggeo-width=320
+          ziggeo-height=240
+          ziggeo-theme='modern'
+          id="ziggeo-recorder">
+        </ziggeo>
+      </center>
+    </div>
+
+  </div>
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+
 </body>
 </html>
