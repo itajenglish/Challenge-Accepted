@@ -31,18 +31,18 @@ app.use(session({
   }
 }));
 
-const checkSession = require('./lib/helpers/checkSession');
-
 //Controllers
 const USERS_ROUTER = require('./controllers/Users');
 const SESSIONS_ROUTER = require('./controllers/Sessions');
 const HOME_ROUTER = require('./controllers/Home');
+const VIDEO_ROUTER = require('./controllers/Video');
 const API_ROUTER = require('./controllers/Api');
 
 // Define All Routes
 app.use(HOME_ROUTER);
 app.use(SESSIONS_ROUTER);
 app.use('/Users', USERS_ROUTER);
+app.use('/Videos', VIDEO_ROUTER);
 app.use('/Api', API_ROUTER);
 
 //start the server
