@@ -1,6 +1,6 @@
 -- DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS videos;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS vidoes;
 
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
@@ -13,8 +13,8 @@ CREATE TABLE users(
 CREATE TABLE videos (
   id SERIAL PRIMARY KEY,
   title varchar(250) NOT NULL,
-  url varchar(250),
+  token varchar(250),
   upvotes integer,
   downvotes integer,
-  users integer REFERENCES users(id)
+  users_id integer REFERENCES users(id)
 );
