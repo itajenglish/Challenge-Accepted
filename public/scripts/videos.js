@@ -9,7 +9,7 @@ $(document).ready(function() {
   }
 
   $.ajax({
-    url: '/api/videos',
+    url: '/videos',
     method: "GET",
     success: function(data){
       data.forEach(token => renderZiggeoVideos(token))

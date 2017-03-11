@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="">
+  <title>Challenge Accepted Videos</title>
+  <link rel="stylesheet" href="/css/materialize.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
   <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
@@ -29,9 +29,21 @@
 </head>
 
 <body>
+  <div class="row">
+
+    <div class="col m6 s12 ">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h4>Top <span class = "textColor">Videos</span></h4>
+          <h4> Will you accept the Challenge? </h4>
+          <div id="ziggeo-video-container"></div>
+        </li>
+
+      </ul>
+    </div>
+
   <h4> Will you accept the Challenge? </h4>
   <div id="ziggeo-video-container"></div>
-
   <!-- Ziggeo recording blah -->
   <ziggeorecorder ziggeo-timelimit=15
     ziggeo-width=320

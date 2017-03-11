@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Welcome To QueDj</title>
+  <title>Challenge Accepted</title>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/materialize.min.css">
   <link rel="stylesheet" href="/css/index.css">
@@ -14,12 +14,12 @@
   <script> ZiggeoApi.token = "7c1ac0d9b66838fd09875138b9d0d5c3"; </script>
   <script> ZiggeoApi.Events.on("submitted", function (data) {
     $.ajax({
-      url: "/api/videos",
+      url: "/videos",
       method: "POST",
       data: { token: data.video.token }
       success: function(res){
          console.log(res);
-         $("#ziggeo-video-container").load('/api/load')
+         $("#ziggeo-video-container").load('/videos')
       }
     })
 
@@ -42,7 +42,7 @@
 <header>
   <nav>
     <div class="nav-wrapper black">
-      <a href="/" class="brand-logo">Que<span class = "textColor" id = "djLogo">DJ</span></a>
+      <a href="/" class="brand-logo">Challenge<span class = "textColor" id = "djLogo">Accepted</span></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href = "/login" class="waves-effect waves-light btn btnColor">Login</a></li>
       </ul>
@@ -90,12 +90,6 @@
             <input id="email" name = "email" type="email" class="validate">
             <label data-error="wrong" data-success="right" for="email">Email</label>
           </div>
-
-          <div class="row">
-            <div class="input-field col s12">
-              <input name = "location" id="location" type="text" class="validate">
-              <label for="location">Location</label>
-            </div>
 
             <div class="row">
               <div class="input-field col s12">
