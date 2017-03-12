@@ -18,18 +18,20 @@
   <script> ZiggeoApi.Events.on("submitted", function(data) {
 
     alert("Congratz b, your video has been submitted with ZIGGEO!!!!");
-    console.log("Hello world")
-    //  $.ajax({
-    //   url: "/api/videos",
-    //   method: "POST",
-    //   data: { token: data.video.token },
-    //   success: function(res){
-    //      console.log(res);
-    //      $("body").load('/videos')
-    //   }
-    // })
+
+     $.ajax({
+      url: "/api/videos",
+      method: "POST",
+      data: { token: data.video.token },
+      success: function(res){
+         console.log("you have submitted your video through heroku");
+         console.log(res);
+         $("body").load('/videos')
+      }
+    })
 
     });
+
   </script>
 
   <script>
