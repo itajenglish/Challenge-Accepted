@@ -15,7 +15,11 @@ $(document).ready(function() {
   }
 
   $(".love").on("click", function(e){
-    e.preventDefault()
+
+    e.preventDefault();
+
+    console.log("asfa");
+  console.log(e.target);
     $.ajax({
       url: "/videos/like",
       method: "POST",
