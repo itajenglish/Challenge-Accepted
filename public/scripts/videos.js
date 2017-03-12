@@ -4,22 +4,12 @@ $(document).ready(function() {
 
   console.log("video doc ready");
 
-  function renderZiggeoVideos(video){
-    $("#ziggeo-video-container")
-      .append("<div class='video'></div>")
-      .append("<ziggeo class='video' id='" + video.id +
-              "' width='550' ziggeo-video='" +
-                 video.token +
-               "'> # " + video.title + "</ziggeo>")
-      .append("<button class='love'> ^^Love^^ </button>");
-  }
 
-  $(".love").on("click", function(e){
-
-    e.preventDefault();
+  $(".like").on("click", function(e){
 
     console.log("asfa");
-  console.log(e.target);
+    console.log(e.target);
+
     $.ajax({
       url: "/videos/like",
       method: "POST",
@@ -27,8 +17,21 @@ $(document).ready(function() {
       success: function(){
         console.log("you have like the video");
       }
-    })
+    });
+
   })
+
+  function renderZiggeoVideos(video){
+    $("#ziggeo-video-container")
+      .append("<div class='video'></div>")
+      .append("<ziggeo class='video' id='" + video.id +
+              "' width='550' ziggeo-video='" +
+                 video.token +
+               "'> # " + video.title + "</ziggeo>")
+      .append("<button class='like'> ^^Love^^      " + video.upvotes +"</button>");
+  }
+
+
 
   function getZiggeoVideos(){
     $.ajax({

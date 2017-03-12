@@ -13,7 +13,24 @@
   <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
   <script> ZiggeoApi.token = "7c1ac0d9b66838fd09875138b9d0d5c3"; </script>
   <script> ZiggeoApi.Config.webrtc = true; </script>
+<script>
+    function likeButton(){
 
+    console.log("asfa");
+    console.log(e.target);
+
+    $.ajax({
+      url: "/videos/like",
+      method: "POST",
+      data: { id: e.target.attributes.id },
+      success: function(){
+        console.log("you have like the video");
+      }
+    });
+
+  }
+
+</script>
 
   <script> ZiggeoApi.Events.on("submitted", function(data) {
 
