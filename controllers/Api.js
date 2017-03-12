@@ -9,10 +9,12 @@ router.post('/users', register, (req, res, next) => {
 });
 
 router.get('/videos', getAllVideos, (req, res, next) => {
-  console.log(req);
 })
 
-router.post('/videos', addNewVideo, (req, res, next) => {})
+router.post('/videos', addNewVideo, (req, res, next) => {
+  console.log(req);
+
+})
 
 
 
