@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { register } = require('../models/User');
-const { getAllVideos, addNewVideo } = require('../models/Video')
+const { getAllVideos, addNewVideo, addNewVideoLike } = require('../models/Video')
 
 
 router.post('/users', register, (req, res, next) => {
@@ -16,6 +16,7 @@ router.post('/videos', addNewVideo, (req, res, next) => {
 
 })
 
+router.post('/videos/likes', addNewVideoLike, (req, res, next) => {})
 
 
 module.exports = router;

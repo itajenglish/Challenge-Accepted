@@ -41,8 +41,25 @@ const addNewVideo = (req, res, next) => {
   })
 }
 
+
+const addNewVideoLike = (req, res, next) => {
+
+  const id = req.body.id
+
+  db.none('UPDATE videos SET upvotes = upvotes+1 WHERE id = $1', [id])
+  .then(() => {
+    res.send('Video Updated!')
+  })
+  .catch((err) => {
+    console.log(err)
+    res.send('OOhh oh something went wrong!')
+  })
+}
+
+
 module.exports = {
   getAllVideos,
   getVideosByUserId,
-  addNewVideo
+  addNewVideo,
+  addNewVideoLike
 }
