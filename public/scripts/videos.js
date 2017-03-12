@@ -4,12 +4,27 @@ $(document).ready(function() {
 
   console.log("video doc ready");
 
-  function renderZiggeoVideos({token, hahstag}){
+  function renderZiggeoVideos(video){
     $("#ziggeo-video-container")
-      .append("<ziggeo class='video' width='550' ziggeo-video='" +
-                 token +
-               "'> # " + hashtag + "</ziggeo>");
+      .append("<div class='video'></div>")
+      .append("<ziggeo class='video' id='" + video.id +
+              "' width='550' ziggeo-video='" +
+                 video.token +
+               "'> # " + video.title + "</ziggeo>")
+      .append("<button class='love'> ^^Love^^ </button>");
   }
+
+  $(".love").on("click", function(e){
+    e.preventDefault()
+    $.ajax({
+      url: "/videos/like",
+      method: "POST",
+      data: { id: e.target.attributes.id },
+      success: function(){
+        console.log("you have like the video");
+      }
+    })
+  })
 
   function getZiggeoVideos(){
     $.ajax({
@@ -19,10 +34,7 @@ $(document).ready(function() {
          console.log("Videos API response");
          console.log(data);
         data.forEach(video => {
-          token = video.token;
-          hashtag = video.hashtag;
-          videoData = { token, hashtag }
-          renderZiggeoVideos(videoData)
+          renderZiggeoVideos(video)
         })
       }
     });
