@@ -18,7 +18,8 @@
   <script> ZiggeoApi.Events.on("submitted", function(data) {
 
     alert("Congratz b, your video has been submitted with ZIGGEO!!!!");
-
+     console.log("this is the data being passed to ajax");
+    console.log(data.video)
      $.ajax({
       url: "/api/videos",
       method: "POST",
@@ -26,6 +27,7 @@
       success: function(res){
          console.log("you have submitted your video through heroku");
          console.log(res);
+
          $("body").load('/videos')
       }
     })
