@@ -18,9 +18,11 @@
   <script> ZiggeoApi.Events.on("submitted", function(data) {
 
     alert("Congratz b, your video has been submitted with ZIGGEO!!!!");
-     console.log("this is the data being passed to ajax");
+
+    console.log("this is the data being passed to ajax");
     console.log(data.video)
-     $.ajax({
+
+    $.ajax({
       url: "/api/videos",
       method: "POST",
       data: { token: data.video.token },
@@ -36,19 +38,19 @@
 
   </script>
 
-  <script>
+<!--   <script>
     ZiggeoApi.Videos.index({}, {
       success: function (args, videos) {
         for (var i = 0; i < videos.length; ++i)
           $("#ziggeo-video-container")
             .append(
-              "<ziggeo class='video' width='300' ziggeo-video='" +
+              "<div><ziggeo class='video' width='300' ziggeo-video='" +
                 videos[i].token +
-              "'></ziggeo>"
+              "'></ziggeo><button class='love'> ^^Love^^ </button></div>"
             );
       }
     });
-  </script>
+  </script> -->
 </head>
 
 <header>
@@ -94,6 +96,6 @@
   </div>
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script src="/scripts/videos.js"></script>
 </body>
 </html>
