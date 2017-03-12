@@ -33,7 +33,7 @@ $(document).ready(function() {
       success: function(data){
          console.log("Videos API response");
          console.log(data);
-        data.data.forEach(video => {
+        data.forEach(video => {
           renderZiggeoVideos(video)
         })
       }
